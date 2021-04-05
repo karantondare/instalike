@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Avatar,
   Button,
@@ -23,8 +23,7 @@ const Auth = () => {
   const googleSuccess = async (res) => {
     const result = await res?.profileObj;
     const token = await res?.tokenId;
-    console.log(result);
-    console.log(token);
+
     try {
       dispatch({
         type: AUTHENTICATION,

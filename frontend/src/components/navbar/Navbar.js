@@ -21,7 +21,6 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    
     setUser(JSON.parse(localStorage.getItem("profile")));
   }, [location]);
 

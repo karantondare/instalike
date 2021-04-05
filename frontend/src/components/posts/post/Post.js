@@ -20,6 +20,7 @@ import useStyles from "./styles";
 const Post = ({ post, setCurrentId, setCreatePost }) => {
   const dispatch = useDispatch();
   const classes = useStyles();
+  const user = localStorage.getItem("profile");
 
   return (
     <>
@@ -60,37 +61,39 @@ const Post = ({ post, setCurrentId, setCreatePost }) => {
           </div>
         </CardContent>
 
-        <CardActions className={classes.cardActions}>
-          <Button
-            size="small"
-            color="primary"
-            onClick={() => dispatch(likePost(post._id))}
-          >
-            {post.likeCount === 0 ? (
-              <FavoriteBorderIcon fontSize="small" />
-            ) : (
-              <FavoriteIcon fontSize="small" />
-            )}
-            {post.likeCount === 0 ? "" : post.likeCount}
-          </Button>
-          <Button
-            size="small"
-            color="primary"
-            onClick={() => {
-              setCurrentId(post._id);
-              setCreatePost(true);
-            }}
-          >
-            <EditIcon fontSize="default" />
-          </Button>
-          <Button
-            size="small"
-            color="primary"
-            onClick={() => dispatch(deletePost(post._id))}
-          >
-            <DeleteIcon fontSize="small" />
-          </Button>
-        </CardActions>
+        {user && (
+          <CardActions className={classes.cardActions}>
+            <Button
+              size="small"
+              color="primary"
+              onClick={() => dispatch(likePost(post._id))}
+            >
+              {post.likeCount === 0 ? (
+                <FavoriteBorderIcon fontSize="small" />
+              ) : (
+                <FavoriteIcon fontSize="small" />
+              )}
+              {post.likeCount === 0 ? "" : post.likeCount}
+            </Button>
+            <Button
+              size="small"
+              color="primary"
+              onClick={() => {
+                setCurrentId(post._id);
+                setCreatePost(true);
+              }}
+            >
+              <EditIcon fontSize="default" />
+            </Button>
+            <Button
+              size="small"
+              color="primary"
+              onClick={() => dispatch(deletePost(post._id))}
+            >
+              <DeleteIcon fontSize="small" />
+            </Button>
+          </CardActions>
+        )}
       </Card>
     </>
   );
