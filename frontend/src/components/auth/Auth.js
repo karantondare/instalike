@@ -3,7 +3,6 @@ import {
   Avatar,
   Button,
   Paper,
-  Grid,
   Typography,
   Container,
 } from "@material-ui/core";
@@ -13,7 +12,6 @@ import { GoogleLogin } from "react-google-login";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 
 import useStyles from "./styles";
-import Input from "./Input";
 import Icon from "./Icon";
 import { AUTHENTICATION } from "../../constants/actionTypes";
 
@@ -23,14 +21,6 @@ const Auth = () => {
   const history = useHistory();
   const [showPassword, setShowPassword] = useState(false);
   const [isSignup, setIsSignup] = useState(false);
-
-  const handleChange = () => {};
-  const handleSubmit = () => {};
-  const handleShowPassword = () => setShowPassword((prevState) => !prevState);
-  const switchMode = () => {
-    setIsSignup((prevState) => !prevState);
-    setShowPassword((prevState) => !prevState);
-  };
 
   const googleSuccess = async (res) => {
     const result = await res?.profileObj;
@@ -60,7 +50,7 @@ const Auth = () => {
         <Typography component="h1" variant="h5">
           {isSignup ? "Sign up" : "Sign in"}
         </Typography>
-        <form className={classes.form} onSubmit={handleSubmit}>
+        <form className={classes.form}>
           <GoogleLogin
             clientId="780385843073-js6m99ad957ddbsg7heug47pf5l7j564.apps.googleusercontent.com"
             render={(renderProps) => (
