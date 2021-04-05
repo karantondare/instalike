@@ -19,8 +19,6 @@ const Auth = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
   const history = useHistory();
-  const [showPassword, setShowPassword] = useState(false);
-  const [isSignup, setIsSignup] = useState(false);
 
   const googleSuccess = async (res) => {
     const result = await res?.profileObj;
@@ -48,7 +46,7 @@ const Auth = () => {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          {isSignup ? "Sign up" : "Sign in"}
+          "Sign in"
         </Typography>
         <form className={classes.form}>
           <GoogleLogin
