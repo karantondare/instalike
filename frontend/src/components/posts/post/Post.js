@@ -9,10 +9,8 @@ import {
 } from "@material-ui/core/";
 import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
-import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
 import ThumbUpAltOutlined from "@material-ui/icons/ThumbUpAltOutlined";
-import FavoriteIcon from "@material-ui/icons/Favorite";
 import moment from "moment";
 import { useDispatch } from "react-redux";
 
