@@ -3,8 +3,7 @@ import { deepPurple } from "@material-ui/core/colors";
 
 export default makeStyles((theme) => ({
   appBar: {
-    borderRadius: 15,
-    margin: "30px 0",
+    borderRadius: 5,
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
@@ -25,14 +24,15 @@ export default makeStyles((theme) => ({
   },
   profile: {
     display: "flex",
-    justifyContent: "space-between",
+    justifyContent: "flex-end",
     width: "400px",
   },
   userName: {
     display: "flex",
     alignItems: "center",
+    padding: "0 1rem",
   },
-  brandContainer: {
+  container: {
     display: "flex",
     alignItems: "center",
   },

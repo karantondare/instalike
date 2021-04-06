@@ -2,7 +2,8 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles({
   media: {
-    height: 0,
+    // height: "auto",
+    // width: "45vw",
     paddingTop: "56.25%",
     backgroundColor: "rgba(0, 0, 0, 0.5)",
     backgroundBlendMode: "darken",
@@ -31,6 +32,10 @@ export default makeStyles({
   },
   title: {
     padding: "0 16px",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: "1rem",
   },
   cardActions: {
     padding: "0 16px 8px 16px",
@@ -39,5 +44,24 @@ export default makeStyles({
   },
   time: {
     paddingBottom: "5px",
+  },
+  detailContainer: {
+    display: "flex",
+    justifyContent: "flex-start",
+    alignItems: "flex-start",
+    padding: "1rem",
+  },
+  cardcontent: {
+    width: "50%",
+    height: "100%",
+    background: "#eeeeee",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "space-between",
+    boxSizing: "border-box",
+  },
+  cardmedia: {
+    height: "100%",
+    width: "50%",
   },
 });
