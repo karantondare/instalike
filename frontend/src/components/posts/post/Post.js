@@ -23,8 +23,8 @@ const Post = ({ post, setCurrentId, setCreatePost }) => {
   const user = JSON.parse(localStorage.getItem("profile"));
 
   const Likes = () => {
-    if (post?.likes.length > 0) {
-      return post?.likes.find(
+    if (post.likes && post.likes.length > 0) {
+      return post.likes.find(
         (like) => like === (user?.result?.googleId || user?.result?._id)
       ) ? (
         <>
@@ -90,8 +90,8 @@ const Post = ({ post, setCurrentId, setCreatePost }) => {
           <Button
             size="small"
             color="primary"
-            onClick={() => dispatch(likePost(post._id))}
             disabled={!user?.result}
+            onClick={() => dispatch(likePost(post._id))}
           >
             <Likes />
           </Button>

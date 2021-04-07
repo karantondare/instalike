@@ -37,9 +37,10 @@ const Home = () => {
             </div>
             {createPost && (
               <Form
+                className={classes.form}
                 currentId={currentId}
                 setCurrentId={setCurrentId}
-                className={classes.form}
+                setCreatePost={setCreatePost}
               />
             )}
           </Grid>

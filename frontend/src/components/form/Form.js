@@ -6,7 +6,7 @@ import FileBase from "react-file-base64";
 import useStyles from "./styles";
 import { createPost, updatePost } from "../../actions/postsActions";
 
-const Form = ({ currentId, setCurrentId }) => {
+const Form = ({ currentId, setCurrentId, setCreatePost }) => {
   const [postData, setPostData] = useState({
     title: "",
     message: "",
@@ -40,11 +40,13 @@ const Form = ({ currentId, setCurrentId }) => {
 
     if (currentId === 0) {
       dispatch(createPost({ ...postData, name: user?.result?.name }));
+      setCreatePost((prevState) => !prevState);
       clear();
     } else {
       dispatch(
         updatePost(currentId, { ...postData, name: user?.result?.name })
       );
+      setCreatePost((prevState) => !prevState);
       clear();
     }
   };
